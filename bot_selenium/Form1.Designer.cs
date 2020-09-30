@@ -44,6 +44,7 @@
             this.Open.TabIndex = 0;
             this.Open.Text = "Open";
             this.Open.UseVisualStyleBackColor = true;
+            this.Open.Click += new System.EventHandler(this.Open_Click);
             // 
             // Close
             // 
@@ -53,6 +54,7 @@
             this.Close.TabIndex = 1;
             this.Close.Text = "Close";
             this.Close.UseVisualStyleBackColor = true;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
             // JS
             // 
@@ -62,6 +64,7 @@
             this.JS.TabIndex = 2;
             this.JS.Text = "JS";
             this.JS.UseVisualStyleBackColor = true;
+            this.JS.Click += new System.EventHandler(this.JS_Click);
             // 
             // Tab
             // 
@@ -71,6 +74,7 @@
             this.Tab.TabIndex = 3;
             this.Tab.Text = "Tab";
             this.Tab.UseVisualStyleBackColor = true;
+            this.Tab.Click += new System.EventHandler(this.Tab_Click);
             // 
             // Search
             // 
@@ -80,6 +84,7 @@
             this.Search.TabIndex = 5;
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // TextBox1
             // 
@@ -88,6 +93,7 @@
             this.TextBox1.Name = "TextBox1";
             this.TextBox1.Size = new System.Drawing.Size(570, 352);
             this.TextBox1.TabIndex = 6;
+            this.TextBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // Form1
             // 
