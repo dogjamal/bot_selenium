@@ -83,6 +83,9 @@ namespace bot_selenium
 
         private void Tab_Click(object sender, EventArgs e)
         {
+            //  browser.SwitchTo().Window(browser.WindowHandles[0]);
+            //   System.Windows.Forms.MessageBox.Show(browser.Title + "\r\n" + browser.Url);
+
             String g_window = Find_window("google");
             browser.SwitchTo().Window(g_window);
             System.Windows.Forms.MessageBox.Show(browser.Title + "\r\n" + browser.Url);
