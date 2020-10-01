@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+//using OpenQA.Selenium.PhantomJS;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace bot_selenium
     {
         IWebDriver browser;
         int p_num = 0;
+        //IWebDriver PJS;
 
         // page matching function
         private string Find_window(String url)
@@ -128,16 +130,38 @@ namespace bot_selenium
             IWebElement speed_button = browser.FindElement(By.Id("checkSpeedButton"));
             speed_button.Click();
 
-            // Time waiting until speed will be clickable 
+            // Time waiting until speed will be clickable
+         
+          //  WebDriver waiting = new WebDriverWait(browser, TimeSpan.FromMinutes(1));
             WebDriverWait waiting = new WebDriverWait(browser, TimeSpan.FromMinutes(1));
             IWebElement in_txt = waiting.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(".speed_test_result__incoming > .speed_test_result__value")));
             IWebElement out_txt = waiting.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(".speed_test_result__outcoming > .speed_test_result__value")));
-
-            TextBox1.Text = "Входящая скорость" + in_txt.Text + "\r\n" + "Исходящая скорость" + out_txt.Text; ;
-
-           
-
+           TextBox1.Text = "Входящая скорость" + in_txt.Text + "\r\n" + "Исходящая скорость" + out_txt.Text;
  
+        }
+
+        private void PhantomJS_Click(object sender, EventArgs e)
+        {/*
+            IWebElement click_ob;
+            IWebElement Search;
+            PJS = new PhantomJSDriver();
+
+            PJS.Navigate().GoToUrl("http://google.com");
+
+            // saving xml and png of pages from phantom
+            System.IO.File.WriteAllText("C:\\Users\\user\\Documents\\page.xml", PJS.PageSource);
+            (PJS as PhantomJSDriver).GetScreenshot().SaveAsFile("C:\\Users\\user\\Documents\\page1.png", System.Drawing.Imaging.ImageFormat.Png);
+
+            Search = PJS.FindElement(By.Name("q"));
+            Search.SendKeys("qa testing" + OpenQA.Selenium.Keys.Return);
+            (PJS as PhantomJSDriver).GetScreenshot().SaveAsFile("C:\\Users\\user\\Documents\\page2.png", System.Drawing.Imaging.ImageFormat.Png);
+           
+            click_ob = PJS.FindElement(By.LinkText("КАРТЫ"));
+            click_ob.Click();
+            (PJS as PhantomJSDriver).GetScreenshot().SaveAsFile("C:\\Users\\user\\Documents\\page3.png", System.Drawing.Imaging.ImageFormat.Png);
+
+            PJS.Quit();
+            */
         }
     }
 }

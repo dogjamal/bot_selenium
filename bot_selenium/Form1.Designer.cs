@@ -35,6 +35,7 @@
             this.Search = new System.Windows.Forms.Button();
             this.TextBox1 = new System.Windows.Forms.TextBox();
             this.Timing = new System.Windows.Forms.Button();
+            this.PhantomJS = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Open
@@ -49,7 +50,7 @@
             // 
             // Close
             // 
-            this.Close.Location = new System.Drawing.Point(62, 296);
+            this.Close.Location = new System.Drawing.Point(62, 363);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(75, 23);
             this.Close.TabIndex = 1;
@@ -59,7 +60,7 @@
             // 
             // JS
             // 
-            this.JS.Location = new System.Drawing.Point(62, 209);
+            this.JS.Location = new System.Drawing.Point(62, 220);
             this.JS.Name = "JS";
             this.JS.Size = new System.Drawing.Size(75, 23);
             this.JS.TabIndex = 2;
@@ -98,7 +99,7 @@
             // 
             // Timing
             // 
-            this.Timing.Location = new System.Drawing.Point(62, 256);
+            this.Timing.Location = new System.Drawing.Point(62, 269);
             this.Timing.Name = "Timing";
             this.Timing.Size = new System.Drawing.Size(75, 23);
             this.Timing.TabIndex = 7;
@@ -106,11 +107,22 @@
             this.Timing.UseVisualStyleBackColor = true;
             this.Timing.Click += new System.EventHandler(this.Timing_Click);
             // 
+            // PhantomJS
+            // 
+            this.PhantomJS.Location = new System.Drawing.Point(62, 315);
+            this.PhantomJS.Name = "PhantomJS";
+            this.PhantomJS.Size = new System.Drawing.Size(75, 23);
+            this.PhantomJS.TabIndex = 8;
+            this.PhantomJS.Text = "PhantomJS";
+            this.PhantomJS.UseVisualStyleBackColor = true;
+            this.PhantomJS.Click += new System.EventHandler(this.PhantomJS_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.PhantomJS);
             this.Controls.Add(this.Timing);
             this.Controls.Add(this.TextBox1);
             this.Controls.Add(this.Search);
@@ -134,6 +146,7 @@
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.TextBox TextBox1;
         private System.Windows.Forms.Button Timing;
+        private System.Windows.Forms.Button PhantomJS;
     }
 }
 
