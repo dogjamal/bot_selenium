@@ -131,8 +131,7 @@ namespace bot_selenium
             speed_button.Click();
 
             // Time waiting until speed will be clickable
-         
-          //  WebDriver waiting = new WebDriverWait(browser, TimeSpan.FromMinutes(1));
+
             WebDriverWait waiting = new WebDriverWait(browser, TimeSpan.FromMinutes(1));
             IWebElement in_txt = waiting.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(".speed_test_result__incoming > .speed_test_result__value")));
             IWebElement out_txt = waiting.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(".speed_test_result__outcoming > .speed_test_result__value")));
