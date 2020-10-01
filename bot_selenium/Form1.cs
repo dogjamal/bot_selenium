@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace bot_selenium
         IWebDriver browser;
         int p_num = 0;
 
+        // page matching function
         private string Find_window(String url)
         {
             String start_window = browser.CurrentWindowHandle;
@@ -83,17 +85,29 @@ namespace bot_selenium
 
         private void Tab_Click(object sender, EventArgs e)
         {
+            // switch without matching
             //  browser.SwitchTo().Window(browser.WindowHandles[0]);
             //   System.Windows.Forms.MessageBox.Show(browser.Title + "\r\n" + browser.Url);
 
+            // switch with matching
             String g_window = Find_window("google");
             browser.SwitchTo().Window(g_window);
             System.Windows.Forms.MessageBox.Show(browser.Title + "\r\n" + browser.Url);
+
+            // switch with lists
+            /*
+            List<String> before_tabs = browser.WindowHandles.ToList();
+            List<String> after_tabs = browser.WindowHandles.ToList();
+            List<String> one_tab = after_tabs.Except(before_tabs).ToList();
+
+            browser.SwitchTo().Window(one_tab[0]);
+            System.Windows.Forms.MessageBox.Show(browser.Title + "\r\n" + browser.Url);
+            */
         }
 
         private void JS_Click(object sender, EventArgs e)
         {
-            //    IJavaScriptExecutor jset = browser as IJavaScriptExecutor;
+            //   IJavaScriptExecutor jset = browser as IJavaScriptExecutor;
             //   jset.ExecuteScript("$(.F7UV7d).hide();");
         }
 
@@ -105,6 +119,25 @@ namespace bot_selenium
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Timing_Click(object sender, EventArgs e)
+        {
+            browser.Navigate().GoToUrl("https://2ip.ru/speed/");
+
+            IWebElement speed_button = browser.FindElement(By.Id("checkSpeedButton"));
+            speed_button.Click();
+
+            // Time waiting until speed will be clickable 
+            WebDriverWait waiting = new WebDriverWait(browser, TimeSpan.FromMinutes(1));
+            IWebElement in_txt = waiting.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(".speed_test_result__incoming > .speed_test_result__value")));
+            IWebElement out_txt = waiting.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(".speed_test_result__outcoming > .speed_test_result__value")));
+
+            TextBox1.Text = "Входящая скорость" + in_txt.Text + "\r\n" + "Исходящая скорость" + out_txt.Text; ;
+
+           
+
+ 
         }
     }
 }

@@ -34,6 +34,7 @@
             this.Tab = new System.Windows.Forms.Button();
             this.Search = new System.Windows.Forms.Button();
             this.TextBox1 = new System.Windows.Forms.TextBox();
+            this.Timing = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Open
@@ -48,7 +49,7 @@
             // 
             // Close
             // 
-            this.Close.Location = new System.Drawing.Point(62, 247);
+            this.Close.Location = new System.Drawing.Point(62, 296);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(75, 23);
             this.Close.TabIndex = 1;
@@ -95,11 +96,22 @@
             this.TextBox1.TabIndex = 6;
             this.TextBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
+            // Timing
+            // 
+            this.Timing.Location = new System.Drawing.Point(62, 256);
+            this.Timing.Name = "Timing";
+            this.Timing.Size = new System.Drawing.Size(75, 23);
+            this.Timing.TabIndex = 7;
+            this.Timing.Text = "Timing";
+            this.Timing.UseVisualStyleBackColor = true;
+            this.Timing.Click += new System.EventHandler(this.Timing_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Timing);
             this.Controls.Add(this.TextBox1);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.Tab);
@@ -121,6 +133,7 @@
         private System.Windows.Forms.Button Tab;
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.TextBox TextBox1;
+        private System.Windows.Forms.Button Timing;
     }
 }
 
