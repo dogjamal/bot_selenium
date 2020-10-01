@@ -131,11 +131,12 @@ namespace bot_selenium
             speed_button.Click();
 
             // Time waiting until speed will be clickable
+            /*
             WebDriverWait waiting = new WebDriverWait(browser, TimeSpan.FromMinutes(1));
             IWebElement in_txt = waiting.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(".speed_test_result__incoming > .speed_test_result__value")));
             IWebElement out_txt = waiting.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(".speed_test_result__outcoming > .speed_test_result__value")));
            TextBox1.Text = "Входящая скорость" + in_txt.Text + "\r\n" + "Исходящая скорость" + out_txt.Text;
- 
+ */
         }
 
         private void PhantomJS_Click(object sender, EventArgs e)
